@@ -6,10 +6,5 @@
     "moduleResolution": "Bundler",
     "declarationMap": false
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "src/native"
-  ]
+  "include": ["src"]
 }

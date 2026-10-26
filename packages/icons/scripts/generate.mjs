@@ -1,7 +1,6 @@
-// Generates the React and React Native icon components from src/svgs.
-// svgr writes into a temporary folder; only changed files are copied over
-// and stale ones removed, so the output folders never disappear (a running
-// Metro dev server reads src/native/generated).
+// Generates the React icon components from src/svgs. svgr writes into a
+// temporary folder; only changed files are copied over and stale ones
+// removed, so the output folder never disappears under a running dev server.
 import { execFileSync } from "node:child_process"
 import {
   mkdtempSync,
@@ -17,7 +16,6 @@ import { join } from "node:path"
 
 const targets = [
   { out: "src/generated", args: [] },
-  { out: "src/native/generated", args: ["--config-file", ".svgrrc.native.js"] },
 ]
 
 for (const { out, args } of targets) {
