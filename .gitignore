@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+
+# Swift Package Manager and Xcode
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+Package.resolved
+
+# Misc
+.DS_Store

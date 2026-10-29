@@ -1,6 +1,6 @@
 {
   "name": "@volkermatthes/icons",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "SVG icons as React components",
   "publishConfig": {
     "access": "public"
@@ -29,7 +29,9 @@
     "build": "pnpm generate && tsup",
     "typecheck": "pnpm generate && tsc --noEmit",
     "clean": "rimraf dist src/generated",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build",
+    "ios": "node scripts/ios.mjs",
+    "ios:check": "node scripts/ios.mjs --check"
   },
   "peerDependencies": {
     "react": ">=17"
@@ -40,5 +42,10 @@
     "rimraf": "^5.0.5",
     "tsup": "^7.0.0",
     "typescript": "^5.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vmatthes/design.git",
+    "directory": "packages/icons"
   }
 }

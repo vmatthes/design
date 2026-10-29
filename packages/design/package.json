@@ -1,21 +1,57 @@
 {
   "name": "@volkermatthes/design",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Design tokens of letmeshowyou and Rudel: TypeScript, CSS variables and Swift (DesignKit)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vmatthes/design.git",
+    "directory": "packages/design"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
-  "description": "Design tokens for letmeshowyou and Rudel: CSS variables and Swift",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "tokens.css",
+    "base.css"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
     "./tokens.css": "./tokens.css",
-    "./base.css": "./base.css"
+    "./base.css": "./base.css",
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.cjs"
+    }
   },
   "scripts": {
+    "build": "tsup",
     "generate": "node scripts/generate.ts",
     "check": "node scripts/generate.ts --check",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
     "@types/node": "^25.1.0",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "tsup": "^8.5.0"
   }
 }

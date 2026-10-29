@@ -1,0 +1,33 @@
+# Tokens, icons and DesignKit must stay in step: generated files up to date,
+# both npm packages build, the Swift package builds for iOS.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Generated tokens and icon imagesets up to date
+        run: pnpm check
+      - run: pnpm build
+      - run: pnpm typecheck
+
+  designkit:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: DesignKit builds
+        run: |
+          xcodebuild -scheme DesignKit \
+            -destination 'generic/platform=iOS Simulator' build
