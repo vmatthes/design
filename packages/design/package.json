@@ -1,0 +1,21 @@
+{
+  "name": "@volkermatthes/design",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Design tokens for letmeshowyou and Rudel: CSS variables and Swift",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./tokens.css",
+    "./base.css": "./base.css"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.ts",
+    "check": "node scripts/generate.ts --check",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "typescript": "5.9.3"
+  }
+}

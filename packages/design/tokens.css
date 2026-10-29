@@ -1,0 +1,151 @@
+/*
+ * Generated from packages/design/src/tokens.ts – do not edit.
+ * `.light` re-applies the light tokens to a subtree that stays light in
+ * dark mode; dark tokens apply under `.dark` (next-themes).
+ */
+
+:root,
+.light {
+  color-scheme: light;
+  --background: #f2f1ec;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #1a1a1a;
+  --primary-foreground: #ffffff;
+  --secondary: #ffffff;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f2f1ec;
+  --muted-foreground: #5e5e58;
+  --accent: #e8e6df;
+  --accent-foreground: #1a1a1a;
+  --destructive: #b42318;
+  --destructive-soft: #fbede9;
+  --border: #eeede8;
+  --input: #e2e0d8;
+  --ring: #1a1a1a;
+  /* Text shades, all ≥ 4.5:1 on the ground and on cards. */
+  --ink-soft: #3a3a36;
+  --ink-muted: #4f4f4a;
+  --sunken: #e8e6df;
+  --placeholder: #8e8d89;
+  /* Inverted cards: dark on light, light on dark. */
+  --ink-card: #1a1a1a;
+  --ink-card-foreground: #ffffff;
+  --ink-card-muted: #bdbdb6;
+  --ink-card-soft: #d6d6d0;
+  --ink-card-chip: #333330;
+  --ink-card-chip-hover: #444440;
+  /* Text on accent colors stays ink in both themes. */
+  --on-accent: #1a1a1a;
+  /* Behind dialogs (iOS sheets dim on their own). */
+  --scrim: rgb(20 20 19 / 0.35);
+  /* Drop line while dragging, and selected items. */
+  --drop: #2f80ed;
+  --inline-gray: #787774;
+  --inline-brown: #9f6b53;
+  --inline-orange: #d9730d;
+  --inline-yellow: #cb912f;
+  --inline-green: #448361;
+  --inline-blue: #337ea9;
+  --inline-purple: #9065b0;
+  --inline-pink: #c14c8a;
+  --inline-red: #d44c47;
+  --radius: 1rem;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 6px 20px rgb(0 0 0 / 0.04);
+  --shadow-float: 0 24px 60px rgb(0 0 0 / 0.22);
+  /* Menus and select lists: items sit inset in the popover, so their corners are concentric with it (item radius = popover radius - inset). */
+  --menu-radius: 18px;
+  --menu-inset: 5px;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #141413;
+  --foreground: #edece7;
+  --card: #1f1f1d;
+  --card-foreground: #edece7;
+  --popover: #252523;
+  --popover-foreground: #edece7;
+  --primary: #edece7;
+  --primary-foreground: #141413;
+  --secondary: #1f1f1d;
+  --secondary-foreground: #edece7;
+  --muted: #2a2a27;
+  --muted-foreground: #a8a7a0;
+  --accent: #363632;
+  --accent-foreground: #edece7;
+  --destructive: #f97066;
+  --destructive-soft: #3a1d1a;
+  --border: #2c2c29;
+  --input: #3a3a36;
+  --ring: #edece7;
+  /* Text shades, all ≥ 4.5:1 on the ground and on cards. */
+  --ink-soft: #d6d5cf;
+  --ink-muted: #c2c1ba;
+  --sunken: #2a2a27;
+  --placeholder: #85847e;
+  /* Inverted cards: dark on light, light on dark. */
+  --ink-card: #edece7;
+  --ink-card-foreground: #1a1a1a;
+  --ink-card-muted: #5e5e58;
+  --ink-card-soft: #3a3a36;
+  --ink-card-chip: #dcdad3;
+  --ink-card-chip-hover: #cfcdc5;
+  /* Text on accent colors stays ink in both themes. */
+  --on-accent: #1a1a1a;
+  /* Behind dialogs (iOS sheets dim on their own). */
+  --scrim: rgb(0 0 0 / 0.6);
+  /* Drop line while dragging, and selected items. */
+  --drop: #5aa0f2;
+  --inline-gray: #9b9b9b;
+  --inline-brown: #ba856f;
+  --inline-orange: #c77d48;
+  --inline-yellow: #ca9849;
+  --inline-green: #529e72;
+  --inline-blue: #5e87c9;
+  --inline-purple: #9d68d3;
+  --inline-pink: #d15796;
+  --inline-red: #df5452;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 6px 20px rgb(0 0 0 / 0.25);
+  --shadow-float: 0 24px 60px rgb(0 0 0 / 0.6);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-soft: var(--destructive-soft);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-sunken: var(--sunken);
+  --color-placeholder: var(--placeholder);
+  --color-ink-card: var(--ink-card);
+  --color-ink-card-foreground: var(--ink-card-foreground);
+  --color-ink-card-muted: var(--ink-card-muted);
+  --color-ink-card-soft: var(--ink-card-soft);
+  --color-ink-card-chip: var(--ink-card-chip);
+  --color-ink-card-chip-hover: var(--ink-card-chip-hover);
+  --color-on-accent: var(--on-accent);
+  --color-scrim: var(--scrim);
+  --color-drop: var(--drop);
+  --shadow-card: var(--shadow-card);
+  --shadow-float: var(--shadow-float);
+}
