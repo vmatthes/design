@@ -5,8 +5,8 @@
   "description": "Shared design of letmeshowyou and Rudel: tokens, icons and the DesignKit Swift package",
   "scripts": {
     "build": "pnpm -r build",
-    "generate": "pnpm --filter @volkermatthes/design generate && pnpm --filter @volkermatthes/icons ios",
-    "check": "pnpm --filter @volkermatthes/design check && pnpm --filter @volkermatthes/icons ios:check",
+    "generate": "pnpm --filter @volkermatthes/design generate && pnpm --filter @volkermatthes/icons ios && pnpm --filter @volkermatthes/icons android",
+    "check": "pnpm --filter @volkermatthes/design check && pnpm --filter @volkermatthes/icons ios:check && pnpm --filter @volkermatthes/icons android:check",
     "typecheck": "pnpm -r typecheck",
     "format": "prettier --write ."
   },

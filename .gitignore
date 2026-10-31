@@ -11,5 +11,8 @@ DerivedData/
 xcuserdata/
 Package.resolved
 
+# Gradle (apps build DesignKitAndroid in place)
+packages/DesignKitAndroid/build/
+
 # Misc
 .DS_Store
