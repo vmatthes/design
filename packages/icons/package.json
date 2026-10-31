@@ -1,6 +1,6 @@
 {
   "name": "@volkermatthes/icons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "SVG icons as React components",
   "publishConfig": {
     "access": "public"
@@ -25,13 +25,13 @@
     }
   },
   "scripts": {
-    "generate": "node scripts/generate.mjs",
+    "generate": "node scripts/generate.mjs && node scripts/stickers.mjs",
     "build": "pnpm generate && tsup",
     "typecheck": "pnpm generate && tsc --noEmit",
     "clean": "rimraf dist src/generated",
     "prepublishOnly": "pnpm build",
-    "ios": "node scripts/ios.mjs",
-    "ios:check": "node scripts/ios.mjs --check"
+    "ios": "node scripts/ios.mjs && node scripts/stickers.mjs",
+    "ios:check": "node scripts/ios.mjs --check && node scripts/stickers.mjs --check"
   },
   "peerDependencies": {
     "react": ">=17"

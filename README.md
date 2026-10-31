@@ -30,6 +30,10 @@ pnpm check      # schlägt fehl, wenn generierte Dateien veraltet sind (läuft a
 2. Für iOS einen Fall in `packages/DesignKit/Sources/DesignKit/BrandIcon.swift` ergänzen (`case name = "NameFilled"`).
 3. `pnpm generate`: legt das Imageset in `Resources/Icons.xcassets/Icons` an. Imagesets ohne SVG hier (z. B. `GoogleMark`) bleiben unberührt.
 
+## Neuer Sticker
+
+Motive für Collections liegen in `packages/icons/src/stickers/<id>.svg`: Kontur `#1A1A1A`, Details `#FFFFFF`, Fläche `var(--c)`, `viewBox="-4 -4 72 72"`. `pnpm generate` schreibt daraus `STICKER_MARKUP` (Web, `Sticker`) und `Stickers.generated.swift` (iOS, `StickerImage`).
+
 ## Veröffentlichen
 
 npm-Pakete und Swift Package haben dieselbe Version.
