@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from packages/design/src/tokens.ts – do not edit. -->
+<resources>
+  <color name="token_background">#141413</color>
+  <color name="token_foreground">#EDECE7</color>
+  <color name="token_card">#1F1F1D</color>
+  <color name="token_card_foreground">#EDECE7</color>
+  <color name="token_popover">#252523</color>
+  <color name="token_popover_foreground">#EDECE7</color>
+  <color name="token_primary">#EDECE7</color>
+  <color name="token_primary_foreground">#141413</color>
+  <color name="token_secondary">#1F1F1D</color>
+  <color name="token_secondary_foreground">#EDECE7</color>
+  <color name="token_muted">#2A2A27</color>
+  <color name="token_muted_foreground">#A8A7A0</color>
+  <color name="token_accent">#363632</color>
+  <color name="token_accent_foreground">#EDECE7</color>
+  <color name="token_destructive">#F97066</color>
+  <color name="token_destructive_soft">#3A1D1A</color>
+  <color name="token_border">#2C2C29</color>
+  <color name="token_input">#3A3A36</color>
+  <color name="token_ring">#EDECE7</color>
+  <color name="token_ink_soft">#D6D5CF</color>
+  <color name="token_ink_muted">#C2C1BA</color>
+  <color name="token_sunken">#2A2A27</color>
+  <color name="token_placeholder">#85847E</color>
+  <color name="token_ink_card">#EDECE7</color>
+  <color name="token_ink_card_foreground">#1A1A1A</color>
+  <color name="token_ink_card_muted">#5E5E58</color>
+  <color name="token_ink_card_soft">#3A3A36</color>
+  <color name="token_ink_card_chip">#DCDAD3</color>
+  <color name="token_ink_card_chip_hover">#CFCDC5</color>
+  <color name="token_on_accent">#1A1A1A</color>
+  <color name="token_drop">#5AA0F2</color>
+  <color name="token_grabber">#4A4A45</color>
+  <color name="token_dashed">#4A4A45</color>
+  <color name="token_calendar_today">#E5484D</color>
+  <color name="token_inline_gray">#9B9B9B</color>
+  <color name="token_inline_brown">#BA856F</color>
+  <color name="token_inline_orange">#C77D48</color>
+  <color name="token_inline_yellow">#CA9849</color>
+  <color name="token_inline_green">#529E72</color>
+  <color name="token_inline_blue">#5E87C9</color>
+  <color name="token_inline_purple">#9D68D3</color>
+  <color name="token_inline_pink">#D15796</color>
+  <color name="token_inline_red">#DF5452</color>
+</resources>

@@ -31,7 +31,9 @@
     "clean": "rimraf dist src/generated",
     "prepublishOnly": "pnpm build",
     "ios": "node scripts/ios.mjs",
-    "ios:check": "node scripts/ios.mjs --check"
+    "ios:check": "node scripts/ios.mjs --check",
+    "android": "node scripts/android.mjs",
+    "android:check": "node scripts/android.mjs --check"
   },
   "peerDependencies": {
     "react": ">=17"

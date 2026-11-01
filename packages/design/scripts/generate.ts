@@ -1,7 +1,7 @@
-// Writes the tokens from src/tokens.ts as CSS (tokens.css) and Swift
-// (packages/DesignKit). `--check` fails instead of writing when a generated
+// Writes the tokens from src/tokens.ts as CSS (tokens.css), Swift
+// (packages/DesignKit) and Kotlin (packages/DesignKitAndroid). `--check` fails instead of writing when a generated
 // file is out of date, for CI.
-import { readFileSync, writeFileSync } from "node:fs"
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
@@ -87,10 +87,78 @@ ${rows}
 `
 }
 
+const argb = (value: string) => "0xFF" + value.replace("#", "").toUpperCase()
+
+function kotlinTokens() {
+  let out = `// Generated from packages/design/src/tokens.ts – do not edit.
+package com.volkermatthes.designkit
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.ui.graphics.Color
+
+/**
+ * Design tokens, the same values as the CSS variables of the web apps.
+ * Each color follows the theme set by [DesignTheme].
+ */
+object Tokens {
+`
+  for (const t of COLORS) {
+    if (t.platforms && !t.platforms.includes("kotlin")) continue
+    if (t.comment) out += `  /** ${t.comment} */\n`
+    out += `  val ${camel(t.name)}: Color\n    @Composable @ReadOnlyComposable get() = dynamicColor(${argb(t.light)}, ${argb(t.dark)})\n`
+  }
+  return out + "}\n"
+}
+
+function kotlinAccents() {
+  const rows = ACCENT_COLORS.map((a) => `    Accent(value = "${a.value}", name = "${a.name}"),`).join("\n")
+  return `// Generated from packages/design/src/tokens.ts – do not edit.
+package com.volkermatthes.designkit
+
+data class Accent(val value: String, val name: String)
+
+/**
+ * Accent colors of the brand palette: collection colors in letmeshowyou,
+ * member colors in Rudel. Text on them is always \`Tokens.onAccent\`.
+ */
+object Accents {
+  val all: List<Accent> = listOf(
+${rows}
+  )
+}
+`
+}
+
+/** Colors for what Compose cannot draw: window background, launcher icon. */
+function androidColors(theme: "light" | "dark") {
+  const slug = (name: string) =>
+    name.toLowerCase().replaceAll("ü", "ue").replaceAll("ä", "ae").replaceAll("ö", "oe")
+  let out = `<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from packages/design/src/tokens.ts – do not edit. -->
+<resources>
+`
+  for (const t of COLORS) {
+    if (t.platforms && !t.platforms.includes("kotlin")) continue
+    out += `  <color name="token_${t.name.replaceAll("-", "_")}">${t[theme].toUpperCase()}</color>\n`
+  }
+  if (theme === "light") {
+    for (const a of ACCENT_COLORS) out += `  <color name="accent_${slug(a.name)}">${a.value}</color>\n`
+  }
+  return out + "</resources>\n"
+}
+
+const kotlinDir = "../DesignKitAndroid/src/main/kotlin/com/volkermatthes/designkit"
+const androidRes = "../DesignKitAndroid/src/main/res"
+
 const outputs: [string, string][] = [
   [join(root, "tokens.css"), css()],
   [join(root, "../DesignKit/Sources/DesignKit/Tokens.generated.swift"), swiftTokens()],
   [join(root, "../DesignKit/Sources/DesignKit/Accents.generated.swift"), swiftAccents()],
+  [join(root, kotlinDir, "Tokens.generated.kt"), kotlinTokens()],
+  [join(root, kotlinDir, "Accents.generated.kt"), kotlinAccents()],
+  [join(root, androidRes, "values/tokens.xml"), androidColors("light")],
+  [join(root, androidRes, "values-night/tokens.xml"), androidColors("dark")],
 ]
 
 let stale = 0
@@ -104,6 +172,7 @@ for (const [path, content] of outputs) {
     console.error(`out of date: ${path}`)
     stale++
   } else {
+    mkdirSync(dirname(path), { recursive: true })
     writeFileSync(path, content)
     console.log(`wrote ${path}`)
   }

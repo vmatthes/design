@@ -1,8 +1,9 @@
 /**
  * Design tokens of letmeshowyou and Rudel, the one source for all apps.
  * `pnpm --filter @volkermatthes/design generate` writes them as CSS variables
- * (tokens.css, imported by each globals.css) and as Swift (`Tokens` in
- * packages/DesignKit). Edit here, never in the generated files.
+ * (tokens.css, imported by each globals.css), as Swift (`Tokens` in
+ * packages/DesignKit) and as Kotlin (`Tokens` in packages/DesignKitAndroid).
+ * Edit here, never in the generated files.
  *
  * Warm off-white ground, near-black ink, white cards and pill controls.
  * Dark theme: warm near-black ground, slightly lifted cards. Inverted cards
@@ -11,14 +12,14 @@
  */
 
 export type ColorToken = {
-  /** Kebab-case name: `--name` in CSS, camelCase in Swift. */
+  /** Kebab-case name: `--name` in CSS, camelCase in Swift and Kotlin. */
   name: string
   light: string
   dark: string
   /** Also a Tailwind color (`bg-name`, `text-name`). Default true. */
   tailwind?: boolean
-  /** Only emitted for these platforms. Default both. */
-  platforms?: readonly ("css" | "swift")[]
+  /** Only emitted for these platforms. Default all. */
+  platforms?: readonly ("css" | "swift" | "kotlin")[]
   comment?: string
 }
 
@@ -89,15 +90,23 @@ export const COLORS: readonly ColorToken[] = [
     name: "grabber",
     light: "#c9c7c0",
     dark: "#4a4a45",
-    platforms: ["swift"],
+    platforms: ["swift", "kotlin"],
     comment: "Sheet grabbers.",
   },
   {
     name: "dashed",
     light: "#cfcdc5",
     dark: "#4a4a45",
-    platforms: ["swift"],
+    platforms: ["swift", "kotlin"],
     comment: "Dashed outlines of add buttons.",
+  },
+
+  {
+    name: "calendar-today",
+    light: "#e5484d",
+    dark: "#e5484d",
+    platforms: ["kotlin"],
+    comment: "The circle around today in the calendar.",
   },
 
   // Text colors inside notes (<span data-color> in their Markdown).
