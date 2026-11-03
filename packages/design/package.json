@@ -1,6 +1,6 @@
 {
   "name": "@volkermatthes/design",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Design tokens of letmeshowyou and Rudel: TypeScript, CSS variables and Swift (DesignKit)",
   "repository": {
     "type": "git",
