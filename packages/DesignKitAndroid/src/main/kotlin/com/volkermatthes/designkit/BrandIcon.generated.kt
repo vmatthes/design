@@ -28,6 +28,7 @@ enum class BrandIcon(@DrawableRes val res: Int) {
   camera(R.drawable.ic_camera_filled),
   cart(R.drawable.ic_cart_filled),
   cross(R.drawable.ic_cross_filled),
+  circleCross(R.drawable.ic_circle_cross_filled),
   exclamation(R.drawable.ic_circle_exclamation_filled),
   info(R.drawable.ic_circle_info_filled),
   question(R.drawable.ic_circle_question_filled),
