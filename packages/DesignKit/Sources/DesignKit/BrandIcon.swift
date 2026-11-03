@@ -29,6 +29,7 @@ public enum BrandIcon: String, CaseIterable, Sendable {
   case camera = "CameraFilled"
   case cart = "CartFilled"
   case cross = "CrossFilled"
+  case circleCross = "CircleCrossFilled"
   case exclamation = "CircleExclamationFilled"
   case info = "CircleInfoFilled"
   case question = "CircleQuestionFilled"
