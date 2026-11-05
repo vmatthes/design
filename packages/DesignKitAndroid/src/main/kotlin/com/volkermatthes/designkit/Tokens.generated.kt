@@ -82,9 +82,9 @@ object Tokens {
   /** Dashed outlines of add buttons. */
   val dashed: Color
     @Composable @ReadOnlyComposable get() = dynamicColor(0xFFCFCDC5, 0xFF4A4A45)
-  /** The circle around today in the calendar. */
+  /** Today in the calendar: its number and the short mark below it. */
   val calendarToday: Color
-    @Composable @ReadOnlyComposable get() = dynamicColor(0xFFE5484D, 0xFFE5484D)
+    @Composable @ReadOnlyComposable get() = dynamicColor(0xFFC4372E, 0xFFFF7A6E)
   val inlineGray: Color
     @Composable @ReadOnlyComposable get() = dynamicColor(0xFF787774, 0xFF9B9B9B)
   val inlineBrown: Color

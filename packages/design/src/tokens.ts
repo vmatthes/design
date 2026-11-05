@@ -103,10 +103,10 @@ export const COLORS: readonly ColorToken[] = [
 
   {
     name: "calendar-today",
-    light: "#e5484d",
-    dark: "#e5484d",
-    platforms: ["kotlin"],
-    comment: "The circle around today in the calendar.",
+    light: "#c4372e",
+    dark: "#ff7a6e",
+    platforms: ["swift", "kotlin"],
+    comment: "Today in the calendar: its number and the short mark below it.",
   },
 
   // Text colors inside notes (<span data-color> in their Markdown).

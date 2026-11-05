@@ -43,6 +43,8 @@ public enum Tokens {
   public static let grabber = dynamic(0xC9C7C0, 0x4A4A45)
   /// Dashed outlines of add buttons.
   public static let dashed = dynamic(0xCFCDC5, 0x4A4A45)
+  /// Today in the calendar: its number and the short mark below it.
+  public static let calendarToday = dynamic(0xC4372E, 0xFF7A6E)
   public static let inlineGray = dynamic(0x787774, 0x9B9B9B)
   public static let inlineBrown = dynamic(0x9F6B53, 0xBA856F)
   public static let inlineOrange = dynamic(0xD9730D, 0xC77D48)
