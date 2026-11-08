@@ -34,7 +34,7 @@
   <color name="token_drop">#5AA0F2</color>
   <color name="token_grabber">#4A4A45</color>
   <color name="token_dashed">#4A4A45</color>
-  <color name="token_calendar_today">#E5484D</color>
+  <color name="token_calendar_today">#FF7A6E</color>
   <color name="token_inline_gray">#9B9B9B</color>
   <color name="token_inline_brown">#BA856F</color>
   <color name="token_inline_orange">#C77D48</color>

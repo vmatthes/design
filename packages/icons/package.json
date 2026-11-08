@@ -1,6 +1,6 @@
 {
   "name": "@volkermatthes/icons",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "SVG icons as React components",
   "publishConfig": {
     "access": "public"
