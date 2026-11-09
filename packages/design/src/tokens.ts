@@ -102,6 +102,14 @@ export const COLORS: readonly ColorToken[] = [
   },
 
   {
+    name: "work-row",
+    light: "#fdf6e2",
+    dark: "#393527",
+    comment:
+      "Rudel's work row in day cards (Arbeitszeiten): the card with a touch of the heads' yellow #f6d46e (20 % light, 12 % dark).",
+  },
+
+  {
     name: "calendar-today",
     light: "#c4372e",
     dark: "#ff7a6e",
