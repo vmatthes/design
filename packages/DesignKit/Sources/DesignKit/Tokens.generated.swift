@@ -43,6 +43,8 @@ public enum Tokens {
   public static let grabber = dynamic(0xC9C7C0, 0x4A4A45)
   /// Dashed outlines of add buttons.
   public static let dashed = dynamic(0xCFCDC5, 0x4A4A45)
+  /// Rudel's work row in day cards (Arbeitszeiten): the card with a touch of the heads' yellow #f6d46e (20 % light, 12 % dark).
+  public static let workRow = dynamic(0xFDF6E2, 0x393527)
   /// Today in the calendar: its number and the short mark below it.
   public static let calendarToday = dynamic(0xC4372E, 0xFF7A6E)
   public static let inlineGray = dynamic(0x787774, 0x9B9B9B)

@@ -82,6 +82,9 @@ object Tokens {
   /** Dashed outlines of add buttons. */
   val dashed: Color
     @Composable @ReadOnlyComposable get() = dynamicColor(0xFFCFCDC5, 0xFF4A4A45)
+  /** Rudel's work row in day cards (Arbeitszeiten): the card with a touch of the heads' yellow #f6d46e (20 % light, 12 % dark). */
+  val workRow: Color
+    @Composable @ReadOnlyComposable get() = dynamicColor(0xFFFDF6E2, 0xFF393527)
   /** Today in the calendar: its number and the short mark below it. */
   val calendarToday: Color
     @Composable @ReadOnlyComposable get() = dynamicColor(0xFFC4372E, 0xFFFF7A6E)

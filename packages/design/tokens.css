@@ -44,6 +44,8 @@
   --scrim: rgb(20 20 19 / 0.35);
   /* Drop line while dragging, and selected items. */
   --drop: #2f80ed;
+  /* Rudel's work row in day cards (Arbeitszeiten): the card with a touch of the heads' yellow #f6d46e (20 % light, 12 % dark). */
+  --work-row: #fdf6e2;
   --inline-gray: #787774;
   --inline-brown: #9f6b53;
   --inline-orange: #d9730d;
@@ -100,6 +102,8 @@
   --scrim: rgb(0 0 0 / 0.6);
   /* Drop line while dragging, and selected items. */
   --drop: #5aa0f2;
+  /* Rudel's work row in day cards (Arbeitszeiten): the card with a touch of the heads' yellow #f6d46e (20 % light, 12 % dark). */
+  --work-row: #393527;
   --inline-gray: #9b9b9b;
   --inline-brown: #ba856f;
   --inline-orange: #c77d48;
@@ -146,6 +150,7 @@
   --color-on-accent: var(--on-accent);
   --color-scrim: var(--scrim);
   --color-drop: var(--drop);
+  --color-work-row: var(--work-row);
   --shadow-card: var(--shadow-card);
   --shadow-float: var(--shadow-float);
 }
